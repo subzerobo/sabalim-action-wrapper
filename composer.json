@@ -1,0 +1,18 @@
+{
+    "name": "subzerobo/sabalim-action-wrapper",
+    "description": "Action Wrapper Library for Before/After action handling",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ali Kaviani",
+            "email": "a.kaviani@sabaidea.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+        "psr-4": {
+            "Subzerobo\\PHPActionWrapper\\": "src"
+        }
+    }
+}
