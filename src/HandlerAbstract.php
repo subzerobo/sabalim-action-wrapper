@@ -55,7 +55,7 @@ abstract class HandlerAbstract implements HandlerInterface
         return $this->dataStore;
     }
 
-    public function handleBefore($parent, string $actionName, array $actionData = [])
+    public function handleBefore($object, string $actionName, array $actionData = [])
     {
         // Sets Start Timestamp before call
         if ($actionData['start'] && is_float($actionData['start'])) {
@@ -65,7 +65,7 @@ abstract class HandlerAbstract implements HandlerInterface
         }
     }
 
-    public function handleAfter($parent, string $actionName, array $actionData = [])
+    public function handleAfter($object, string $actionName, array $actionData = [])
     {
         // Sets End Timestamp and Calculate Duration of call
 
