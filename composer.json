@@ -9,7 +9,9 @@
             "email": "a.kaviani@sabaidea.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php" : "^7.0"
+    },
     "autoload" : {
         "psr-4": {
             "Subzerobo\\PHPActionWrapper\\": "src"
