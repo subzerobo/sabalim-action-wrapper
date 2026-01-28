@@ -58,22 +58,15 @@ abstract class HandlerAbstract implements HandlerInterface
     public function handleBefore($object, string $actionName, array $actionData = [])
     {
         // Sets Start Timestamp before call
-        if ($actionData['start'] && is_float($actionData['start'])) {
-            $this->setData('start', $actionData['start']);
-        }else{
-            $this->setData('start',microtime(true));
-        }
+        $start = $actionData['start'] ?? microtime(true);
+        $this->setData('start', $start);
     }
 
     public function handleAfter($object, string $actionName, array $actionData = [])
     {
         // Sets End Timestamp and Calculate Duration of call
-
-        if ($actionData['end'] && is_float($actionData['end'])) {
-            $this->setData('end', $actionData['end']);
-        }else{
-            $this->setData('end',microtime(true));
-        }
+        $end = $actionData['end'] ?? microtime(true);
+        $this->setData('end', $end);
 
         $start  = $this->getData('start');
         $end    = $this->getData('end');
@@ -82,6 +75,4 @@ abstract class HandlerAbstract implements HandlerInterface
 
         $this->setData('total', $total);
     }
-
-
 }
